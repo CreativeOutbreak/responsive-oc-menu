@@ -1,0 +1,30 @@
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+readers do not read off random characters that represent icons */
+
+@if $used == "all-except" {
+    $fm: $font-map;
+    @each $key, $val in $exception-map {
+        $fm: map-remove($fm, $key);   
+    }
+    @each $key, $val in $fm {
+        .#{$fa-css-prefix}-#{$key}:before {
+            content: $val;
+        }
+    }
+}
+@else if $used == "only" {
+    @each $key in $selected-list {
+        .#{$fa-css-prefix}-#{$key}:before {
+            content: map-get($font-map, $key);
+        }
+    }
+}
+@else {
+    $fm: $font-map;
+    @each $key, $val in $fm {
+        .#{$fa-css-prefix}-#{$key}:before {
+            content: $val;
+        }
+    }
+}
+
