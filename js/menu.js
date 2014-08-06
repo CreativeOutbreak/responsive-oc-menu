@@ -95,29 +95,43 @@
         addSelected('selected');
         var closeNavEnd = function(e)
         {
-            if (e && e.target === config['nav-open-btn'].holder || e.target === config['login-open-btn'].holder) {
-                document.removeEventListener(transition_end, closeNavEnd, false);
+            if(e.target === config['nav-open-btn'].holder) {
+                config['nav-open-btn'].holder.removeEventListener(transition_end, closeNavEnd, false);
+                config['nav-open-btn'].open = false;
             }
-            config['nav-open-btn'].open = config['login-open-btn'].open = false
-            nav_open = false;
+            if(e.target === config['login-open-btn'].holder) {
+                config['login-open-btn'].holder.removeEventListener(transition_end, closeNavEnd, false);
+                config['login-open-btn'].open = false;
+            }
         };
+
+        var closeTrigger = function(data) {
+            var holder = data.holder;
+            var open = data.open;
+            var class_name = data.class_name;
+            if (open) {
+                var duration = (transition_end && transition_prop) ? parseFloat(window.getComputedStyle(holder, '')[transition_prop + 'Duration']) : 0;             
+                if (duration > 0) {
+                    holder.addEventListener(transition_end, closeNavEnd, false);
+                } else {
+                    closeNavEnd(null);
+                }
+            }
+            removeClass(doc, class_name);
+        }
+        
 
     app.closeNav =function(e)
     {
-        var data = (config['nav-open-btn'].open) ? config['nav-open-btn'] : config['login-open-btn']; 
-        var open = data.open;
-        var class_name = data.class_name;
-        holder = data.holder
-        if (open) {
-            // close navigation after transition or immediately
-            var duration = (transition_end && transition_prop) ? parseFloat(window.getComputedStyle(holder, '')[transition_prop + 'Duration']) : 0;             
-            if (duration > 0) {
-                document.addEventListener(transition_end, closeNavEnd, false);
-            } else {
-                closeNavEnd(null);
-            }
-        }
-        removeClass(doc, class_name);
+        var data, holder, open, class_name;
+        
+        if(config['nav-open-btn'].open) {
+            data = config['nav-open-btn'];
+            closeTrigger(data); 
+        }else if(config['login-open-btn'].open) {
+            data = config['login-open-btn'];
+            closeTrigger(data); 
+        } 
     };
 
     app.openNav = function(e)
@@ -132,10 +146,24 @@
 
     app.toggleNav = function(e)
     { 
-        if (config['nav-open-btn'].open || config['login-open-btn'].open && hasClass(doc, 'js-nav') || hasClass(doc, 'js-login')) {
-            app.closeNav(e);
-        } else {
-            app.openNav(e);
+        if( hasParent(e.target, 'login-open-btn') ) {
+            if(config['nav-open-btn'].open) {
+                app.closeNav(e);
+                app.openNav(e);
+            } else if(config['login-open-btn'].open) {
+                app.closeNav(e); 
+            } else {
+                app.openNav(e); 
+            }
+        } else if( hasParent(e.target, 'nav-open-btn') ) {
+            if(config['login-open-btn'].open) {
+                app.closeNav(e);
+                app.openNav(e);
+            } else if(config['nav-open-btn'].open) {
+                app.closeNav(e); 
+            } else {
+                app.openNav(e); 
+            }
         }
         if (e) {
             e.preventDefault();
@@ -147,13 +175,13 @@
     document.getElementById('nav-open-btn').addEventListener('click', app.toggleNav, false);
 
     // close nav with main "close" button
-    document.getElementById('login-close-btn').addEventListener('click', app.toggleNav, false);
-    document.getElementById('nav-close-btn').addEventListener('click', app.toggleNav, false);
+    document.getElementById('login-close-btn').addEventListener('click', app.closeNav, false);
+    document.getElementById('nav-close-btn').addEventListener('click', app.closeNav, false);
 
     // close nav by touching the partial off-screen content
     document.addEventListener('click', function(e)
             { 
-                if ((config['nav-open-btn'].open || config['login-open-btn'].open) && !hasParent(e.target, 'nav-holder') && !hasParent(e.target, 'login-holder')) {
+                if ((config['nav-open-btn'].open || config['login-open-btn'].open) && !hasParent(e.target, 'nav-holder') && !hasParent(e.target, 'login-holder') && !hasParent(e.target, 'nav-open-btn') && !hasParent(e.target, 'login-open-btn')) {
                     e.preventDefault();
                     app.closeNav();
                 }
