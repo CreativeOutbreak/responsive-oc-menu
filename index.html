@@ -6,33 +6,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
+        <script>
+        <!--#include virtual="js/enhance.min.js" -->
+        </script>
+        
+<!--#if expr="$HTTP_COOKIE=/fullcss\=true/" -->
+        <link rel="stylesheet" href="css/menu.css">
+<!--#else -->
+        <script>
+                enhance.loadCSS( "css/menu.css" );
+                enhance.cookie( 'fullcss', true, 1 );
+        </script>
+        <style>
+            /* critical CSS styles for this template go here... */
+        </style>
+        <!-- <noscript><link rel="stylesheet" href="css/menu.css"></noscript>-->
+<!--#endif -->
+               
         <link href="css/font-awsome/font-awesome.css" rel="stylesheet">
-        <link href="css/menu.css" rel="stylesheet">
         <script src="js/modernizr.js"></script>
     </head>
     <body>
         <header id="header" class="header">
-           <a id="nav-open-btn"  href="#header"><span class="screen-reader">Menu</span> <i class="fa fa-bars"></i></a> 
-           <a id="login-open-btn"  href="#header"><span class="screen-reader">Login</span> <i class="fa fa-user"></i></a> 
+        <a id="nav-open-btn"  href="#header"><span class="screen-reader">Menu</span> <i class="fa fa-bars"></i></a> 
+        <a id="login-open-btn"  href="#header"><span class="screen-reader">Login</span> <i class="fa fa-user"></i></a> 
         </header>
         <div id="nav-holder" class="holder">
-           <a id="nav-close-btn" class="close-btn" href="#nav-holder"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
+            <a id="nav-close-btn" class="close-btn" href="#nav-holder"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
             <nav> 
-                <ul>
-                    <li><a href="#">Magazine</a></li>
-                    <li><a class="selected" href="#">Articles</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Subscribe</a></li>
-                </ul>
+            <ul>
+                <li><a href="#">Magazine</a></li>
+                <li><a class="selected" href="#">Articles</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Subscribe</a></li>
+            </ul>
             </nav>
         </div>
         <div id="login-holder" class="holder">
-           <a id="login-close-btn" class="close-btn" href="#nav-holder"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
-            <a href="#">Facebook Login</a>
+            <a id="login-close-btn" class="close-btn" href="#nav-holder"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
+            <h2>Login</h2>
+            <a class="tw btn" href="#"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
+            <a class="fb btn" href="#"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
+            <a class="gp btn" href="#"><i class="fa fa-google-plus"></i> <span>Google+</span></a>
         </div>
-        <div style="height: 800px;"></div>
+        <div id="main" style="height: 800px;"></div>
+
+        <script src="js/menu.min.js"></script>  
         
-        <script src="js/menu.js"></script>
     </body>
     <html>

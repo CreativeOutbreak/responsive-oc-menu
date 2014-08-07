@@ -12,6 +12,17 @@ module.exports = function(grunt) {
                 }
             }
         },
+        uglify: {
+            options: {
+                mangle: false
+            },
+            my_target: {
+                files: {
+                    'js/menu.min.js': 'js/src/menu.js',
+                    'js/enhance.min.js': 'js/src/enhance.js'
+                }
+            }
+        },
         watch: {
             css: {
                 files: ['scss/**/*.scss','scss/**/_*.scss','scss/*.scss'],
@@ -19,7 +30,15 @@ module.exports = function(grunt) {
                 options: {
                     spawn: true 
                 }
+           },
+           js: {
+                files: 'js/src/*.js',
+                tasks: 'uglify',
+                options: {
+                    spawn: true 
+                }
            }
+
 
         }
     });
@@ -27,7 +46,8 @@ module.exports = function(grunt) {
     // Plugins
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');    
-    
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
     // Tasks
     grunt.registerTask('default', ['watch']);
     };
