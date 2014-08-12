@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             }
         },
         shell: {
-            patternlab: {
+            dropcache: {
                 command: "sudo touch /var/cache/mod_pagespeed/cache.flush"
             },  
         }, 
