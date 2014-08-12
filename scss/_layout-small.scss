@@ -1,0 +1,59 @@
+.header {
+    width: 100%;
+    height:45px;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+.holder {
+    width: 70%;
+    max-width: pem(400);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    overflow: auto;
+}
+
+.holder ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.holder ul a {
+    width: 88%;
+    padding: 1em 6%;
+    font-family: sans-serif;
+    text-decoration: none;
+    display: block;
+    color: rgb(204, 204, 204);
+    font-size: 0.875em;
+    line-height: 1.28571em;
+    font-weight: bold;
+    outline: medium none;
+}
+
+.js { 
+    .holder {
+        left: -100%;
+    }   
+
+}
+
+
+.js-nav { 
+    .holder {
+        left: 0;
+    }   
+
+}
+
+.js-login { 
+    .holder {
+        left: 0;
+    }   
+
+}
+
+

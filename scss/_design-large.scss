@@ -1,0 +1,26 @@
+.header {
+    a.hgroup {
+        width: pem(320);
+        height: pem(87);
+        background-position: 0 0;
+        border-right: none;
+    }
+}
+
+#nav-open-btn, #login-open-btn, .close-btn, #nav-holder h2, #nav-holder i {
+    display: none;
+}
+
+#nav-holder ul {
+    list-style: none;
+    padding: 0 0 0 pem(10);
+}
+
+#nav-holder ul li {
+    float: left;
+}
+
+#nav-holder ul li a {
+    padding: pem(5);
+    text-decoration: none;
+}
