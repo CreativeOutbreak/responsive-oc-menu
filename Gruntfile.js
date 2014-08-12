@@ -24,25 +24,25 @@ module.exports = function(grunt) {
             }
         },
         shell: {
-            patternlab: {
+            dropcache: {
                 command: "sudo touch /var/cache/mod_pagespeed/cache.flush"
             },  
         }, 
         watch: {
             css: {
                 files: ['scss/**/*.scss','scss/**/_*.scss','scss/*.scss'],
-                tasks: ['compass', 'shell'],
+                tasks: ['compass'],
                 options: {
                     spawn: true 
                 }
            },
-           js: {
+           /*js: {
                 files: 'js/src/*.js',
                 tasks: 'uglify',
                 options: {
                     spawn: true 
                 }
-           }
+           }*/
 
 
         }
@@ -50,9 +50,9 @@ module.exports = function(grunt) {
 
     // Plugins
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-shell');
+    //grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-compass');    
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    //grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Tasks
     grunt.registerTask('default', ['watch']);
