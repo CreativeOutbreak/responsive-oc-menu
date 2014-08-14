@@ -6,6 +6,8 @@
 
 @import "layout";
 @import "design";
+@import "effects";
+
 
 @media (max-width: $extra-small-end) {
 
@@ -16,8 +18,6 @@
 }
 
 @media (min-width: $small-start) {
-
-
 
 @import "layout-large";
 @import "design-large";

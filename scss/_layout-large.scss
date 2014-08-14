@@ -7,10 +7,17 @@
 
 #nav-holder {
     width: 100%;
-    
+    max-width: 100%;
+    position: relative;
+    @include vendor("transform", none);
+    @include vendor("transition", none);
+    @include vendor("box-shadow", none);
+    left: 0;
+    background-color: transparent; 
     ul {
         padding: 0 0 0 pem(10);
-        
+        width: pem(600);
+ 
         li {
             float: left;
             
@@ -25,29 +32,17 @@
 }
 
 
-#login-holder {
-    margin: pem(5) pem(5) 0 0;
+#search-holder {
+    float: right;
+    margin-right: pem(20);
+    
+    input {
+        height: pem(32);
+    }
 }
 
-
-
-
-#login-holder {
-    width: pem(400);
-    height: pem(400);
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 5;
-    overflow: auto;
-}
-
-
-
-
-.js-login { 
-    #login-holder {
-        right: 0;
-    }   
-
+#login-open-btn {
+    position: absolute;
+    right: pem(20);
+    top: pem(5);
 }
