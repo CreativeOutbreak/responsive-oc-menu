@@ -34,6 +34,37 @@
     outline: medium none;
 }
 
+#search-holder {
+    width: 100%;
+    height: pem(32);
+    text-align: center;
+
+    input {
+        width: 90%;
+        height: pem(32);
+    }
+
+}
+
+
+#login-form {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dashed rgba(254,254,254,0.5);
+    
+    input {
+        width: 90%;
+        height: pem(32);
+        margin: pem(5) auto;
+        padding-left: pem(10);
+    }
+    
+    .btn {
+        margin: pem(5) auto pem(20);
+        background-color: rgba(40, 130, 250, 0.8);
+    }
+}
+
 .js { 
     .holder {
         left: -100%;

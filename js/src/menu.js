@@ -111,7 +111,7 @@ function menu(window, document, undefined) {
             var open = data.open;
             var class_name = data.class_name;
             if (open) {
-                var duration = (transition_end && transition_prop) ? parseFloat(window.getComputedStyle(holder, '')[transition_prop + 'Duration']) : 0;             
+                var duration = (transition_end && transition_prop) ? parseFloat(window.getComputedStyle(holder, '')[transition_prop + 'Duration']) : 0;            
                 if (duration > 0) {
                     holder.addEventListener(transition_end, closeNavEnd, false);
                 } else {
@@ -146,7 +146,7 @@ function menu(window, document, undefined) {
     };
 
     app.toggleNav = function(e)
-    { 
+    {
         if( hasParent(e.target, 'login-open-btn') ) {
             if(config['nav-open-btn'].open) {
                 app.closeNav(e);

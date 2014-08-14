@@ -1,0 +1,53 @@
+.header {
+    a.hgroup {
+        width: pem(320);
+        height: pem(87);
+    }
+}
+
+#nav-holder {
+    width: 100%;
+    
+    ul {
+        padding: 0 0 0 pem(10);
+        
+        li {
+            float: left;
+            
+            a {
+                padding: pem(5);
+            }
+
+        }
+
+    }
+
+}
+
+
+#login-holder {
+    margin: pem(5) pem(5) 0 0;
+}
+
+
+
+
+#login-holder {
+    width: pem(400);
+    height: pem(400);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 5;
+    overflow: auto;
+}
+
+
+
+
+.js-login { 
+    #login-holder {
+        right: 0;
+    }   
+
+}

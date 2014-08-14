@@ -1,26 +1,27 @@
 .header {
     a.hgroup {
-        width: pem(320);
-        height: pem(87);
         background-position: 0 0;
         border-right: none;
     }
 }
 
-#nav-open-btn, #login-open-btn, .close-btn, #nav-holder h2, #nav-holder i {
+#nav-open-btn, #nav-holder .close-btn, #nav-holder h2, #nav-holder i {
     display: none;
 }
 
-#nav-holder ul {
-    list-style: none;
-    padding: 0 0 0 pem(10);
+#nav-holder {
+    ul {
+        list-style: none;
+
+        li {
+            a {
+                text-decoration: none;
+            }
+        }
+    }
 }
 
-#nav-holder ul li {
-    float: left;
-}
 
-#nav-holder ul li a {
-    padding: pem(5);
-    text-decoration: none;
+#login-holder {
+    border: pem(1) solid rgba(0,0,0,0.2);
 }
