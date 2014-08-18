@@ -46,11 +46,11 @@
 }
 
 #login-open-btn {
-    color: #222;
+    color: #a03c3c;
     text-decoration: none;
     font-family: sans-serif;
     
     &:hover {
-        color: #a03c3c;
+        color: darken(#a03c3c, 10%);
     }
 }
