@@ -1,0 +1,24 @@
+$rad: 0.3em;
+
+
+.search-btn {
+    border: 1px solid;
+    border-top-right-radius: $rad;
+    border-bottom-right-radius: $rad;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    height: 1.25em;
+    padding: 5px 8px;
+    padding-bottom: 4px;
+    margin-left: 0;
+}
+
+
+.search-field {
+    border: 1px solid;
+    border-top-left-radius: $rad;
+    border-bottom-left-radius: $rad;
+    border-right: none;
+    height: 2.3em;
+    padding: 0 0.5em;
+    margin-right: 0;
+} 
