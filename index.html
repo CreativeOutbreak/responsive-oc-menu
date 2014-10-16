@@ -21,17 +21,14 @@
                 <h1>New Internationalist</h1>
                 <h2>People, ideas and action for the global justice</h2>
             </a>
-            <a id="nav-open-btn"  href="#header"><span class="screen-reader">Menu</span> <i class="fa fa-bars"></i></a> 
-            <a id="login-open-btn"  href="#header"><span>Login</span> <i class="fa fa-user"></i></a> 
+            <a id="nav-open-btn"  href="#nav-holder"><span class="screen-reader">Menu</span> <i class="fa fa-bars"></i></a> 
+            <a id="login-open-btn"  href="#login-holder"><span>Login</span> <i class="fa fa-user"></i></a> 
             </header>
 
 
             <div id="nav-holder" class="holder">
-                <a id="nav-close-btn" class="close-btn" href="#nav-holder"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
-                <h2 class="screen-reader">Menu</h2>
-                <div class="search-holder">
-                    <input class="search-field" type="search" name="search" placeholder="Search"><span class="search-btn fa fa-search"></span>
-                </div> 
+                <a id="nav-close-btn" class="close-btn" href="#nav-open-btn"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
+                <h2>Menu</h2>
                 <nav class="global-nav" id="main-nav" role="navigation"> 
                     <ul>
                         <li><a href="#">Magazine</a></li>
@@ -49,7 +46,7 @@
 
 
             <div id="login-holder" class="holder">
-                <a id="login-close-btn" class="close-btn" href="#nav-holder"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
+                <a id="login-close-btn" class="close-btn" href="#login-open-btn"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
                 <h2>Login</h2>
                 <form id="login-form">
                     <input type="text" name="email" placeholder="Email Address" />
@@ -62,8 +59,6 @@
                 <a class="gp btn" href="#"><i class="fa fa-google-plus"></i> <span>Google+</span></a>
             </div>
             <div class="main-content" style="height: 800px;"></div>
-        </div>
-        <script src="js/modernizr.js"></script>
-        <script src="js/menu.min.js"></script>  
+        </div>  
     </body>
     <html>

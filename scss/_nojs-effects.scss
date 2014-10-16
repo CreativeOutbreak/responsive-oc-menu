@@ -1,0 +1,9 @@
+.holder {
+  @include vendor("transition", 500ms ease);
+}   
+
+.holder:target {
+  @include vendor("transform", translate(500px,0));
+  @include vendor("transform", translate3d(500px,0,0));
+}
+
