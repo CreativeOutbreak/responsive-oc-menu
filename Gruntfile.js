@@ -12,14 +12,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        perfbudget: {
-            default: {
-                options: {
-                    url: 'http://newint.org',
-                    key: 'ab89ad2a371341eba6cd2143b93391b3'
-                }
-            }
-        },
         uglify: {
             options: {
                 mangle: false
@@ -31,22 +23,17 @@ module.exports = function(grunt) {
                 }
             }
         },
-        shell: {
-            dropcache: {
-                command: "sudo touch /var/cache/mod_pagespeed/cache.flush"
-            },  
-        }, 
         watch: {
             css: {
                 files: ['scss/**/*.scss','scss/**/_*.scss','scss/*.scss'],
-                tasks: ['compass', 'shell'],
+                tasks: ['compass'],
                 options: {
                     spawn: true 
                 }
            },
            js: {
                 files: 'js/src/*.js',
-                tasks: ['uglify', 'shell'],
+                tasks: ['uglify'],
                 options: {
                     spawn: true 
                 }
@@ -58,10 +45,10 @@ module.exports = function(grunt) {
 
     // Plugins
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-shell');
+    //grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-compass');    
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-perfbudget');
+    //grunt.loadNpmTasks('grunt-perfbudget');
 
     // Tasks
     grunt.registerTask('default', ['watch']);

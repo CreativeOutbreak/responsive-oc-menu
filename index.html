@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        
+
         <link rel="stylesheet" href="css/menu.css">
         <link href="css/font-awsome/font-awesome.css" rel="stylesheet">
-        
+
         <!-- style.csse is the styling for this page, not really to do with the menu itself. -->
         <link rel="stylesheet" href="css/style.css">
- 
+
     </head>
     <body>
         <div class="main-wrapper" role="main">
@@ -23,6 +23,7 @@
             </a>
             <a id="nav-open-btn"  href="#nav-holder"><span class="screen-reader">Menu</span> <i class="fa fa-bars"></i></a> 
             <a id="login-open-btn"  href="#login-holder"><span>Login</span> <i class="fa fa-user"></i></a> 
+            <a id="search-open-btn"  href="#search-holder"><span>Search</span> <i class="fa fa-search"></i></a>
             </header>
 
 
@@ -30,18 +31,21 @@
                 <a id="nav-close-btn" class="close-btn" href="#nav-open-btn"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a> 
                 <h2>Menu</h2>
                 <nav class="global-nav" id="main-nav" role="navigation"> 
+                <ul>
+                    <li><a href="#">Magazine</a></li>
+                    <li><label for="articles">Articles</label>
+                    <input type="checkbox" id="articles" />
                     <ul>
-                        <li><a href="#">Magazine</a></li>
-                        <li><a class="selected" href="#">Articles</a></li>
-                        <li><a href="#">Books</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Subscribe</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Politics</a></li>
                     </ul>
+                    </li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Subscribe</a></li>
+                </ul>
                 </nav>
-                <h2>Search</h2>
-                <div id="search-holder">
-                    <input type="search" name="search" placeholder="Type and press enter" />
-                </div>
             </div>
 
 
@@ -58,7 +62,16 @@
                 <a class="fb btn" href="#"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
                 <a class="gp btn" href="#"><i class="fa fa-google-plus"></i> <span>Google+</span></a>
             </div>
+
+            <div id="search-holder" class="holder">
+                <a id="login-close-btn" class="close-btn" href="#login-open-btn"><span class="screen-reader">Close Menu</span> <i class="fa fa-times-circle-o "></i></a>
+                <h2>Search</h2>
+                <div id="search-box">
+                    <input type="search" name="search" placeholder="Type and press enter" />
+                </div>
+            </div>
             <div class="main-content" style="height: 800px;"></div>
-        </div>  
+        </div> 
+
     </body>
     <html>

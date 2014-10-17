@@ -29,7 +29,7 @@
     }
     
     left: -500px;
-    
+    @include vendor("box-shadow", inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25));
 }
 
 .close-btn {
@@ -40,12 +40,4 @@
     width: pem(30);
     text-align: center;
 }
-
-.js { 
-    .holder {
-        @include vendor("box-shadow", inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25));
-    }   
-
-}
-
 

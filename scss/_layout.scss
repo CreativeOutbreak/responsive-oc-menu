@@ -35,7 +35,7 @@ body {
         list-style: none;
         padding: 0;
 
-        a {
+        a, label {
             width: 88%;
             padding: 1em 6%;
             font-family: sans-serif;
@@ -46,6 +46,7 @@ body {
             line-height: 1.28571em;
             font-weight: bold;
             outline: medium none;
+            cursor: pointer;
         }
 
     }
@@ -68,20 +69,6 @@ body {
         margin: pem(5) auto pem(20);
         background-color: rgba(40, 130, 250, 0.8);
     }
-}
-
-.js { 
-    .holder {
-        left: -100%;
-    }   
-
-}
-
-.js-login { 
-    .holder {
-        left: 0;
-    }   
-
 }
 
 

@@ -19,7 +19,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.holder ul li a:hover {
+.holder ul li a:hover, .holder ul li label:hover {
     background-color: #444;
 }
 
@@ -41,7 +41,26 @@
     position: absolute;
 }
 
-#nav-open-btn, #login-open-btn {
+.holder ul li ul {
+    max-height: 0;
+    overflow: hidden;
+
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.8s;
+}
+
+.holder ul li input[type='checkbox'] {
+    display: none;
+    &:checked {
+        + ul {
+            max-height: 400px;
+        }
+    }
+}
+
+
+#nav-open-btn, #login-open-btn, #search-open-btn {
     color: #ffffff;
     font-size: pem(24);
     float: right;
@@ -54,7 +73,7 @@
 
 }
 
-#login-open-btn {
+#login-open-btn, #search-open-btn {
     
     span {
         border: 0;
