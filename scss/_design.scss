@@ -1,8 +1,40 @@
 .header {
+
+    background-color: $nav-bar-bg-color;
+
     a.hgroup {
+        width: pem(45);
+        height: pem(45);
+        background-position: pem(-217) pem(-92);
+        border-right: pem(1) solid rgba(0,0,0,0.2);
         background-image: url("../images/logo-large-sprite.png");
         display: inline-block;
         background-repeat: no-repeat;
+
+    }
+
+    .menu-button {
+        color: #ffffff;
+        font-size: pem(24);
+        float: right;
+
+        i {
+            line-height: pem(30);
+            width: pem(30);
+            text-align: center;
+        }
+
+        span {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;        
+        }
+
     }
 }
 
@@ -27,9 +59,72 @@
     .gp {
         background-color: #dd4b39;
     }
-    
+
     left: -500px;
     @include vendor("box-shadow", inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25));
+
+
+
+    ul li {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+
+        a.selected i {
+            width: 0;
+            height: 0;
+            color: #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent; 
+
+            border-right:10px solid #fff;
+            right: 0;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+
+
+        a:hover, label:hover {
+            background-color: #444;
+        }
+
+        a.selected {
+            color: #fff;  
+        }
+
+
+        &:last-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        input[type='checkbox'] {
+            display: none;
+            &:checked {
+                + ul {
+                    max-height: 500px;
+                }
+            }
+        }
+
+
+        ul {
+            max-height: 0;
+            overflow: hidden;
+
+            -webkit-transition: max-height 0.8s;
+            -moz-transition: max-height 0.8s;
+            transition: max-height 0.8s;
+
+            li {
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+
+
+    }
+
 }
 
 .close-btn {
@@ -41,3 +136,13 @@
     text-align: center;
 }
 
+
+@include breakpoint(extra-small) {
+    .header {
+        a.hgroup {
+            background-position: pem(0) pem(-92);
+            width: pem(215);
+            border: none;
+        }
+    }
+}

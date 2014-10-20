@@ -14,6 +14,15 @@ body {
 }
 
 .header {
+    
+    
+    width: 100%;
+    height:45px;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+
+    
     a {
         h1, h2 {
             @extend .screen-reader;
@@ -79,4 +88,14 @@ body {
     }
 }
 
+#search-box {
+    width: 100%;
+    height: pem(32);
+    text-align: center;
 
+    input {
+        width: 90%;
+        height: pem(32);
+    }
+
+}
