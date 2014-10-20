@@ -48,6 +48,14 @@ body {
             outline: medium none;
             cursor: pointer;
         }
+        label i {
+            float: right;
+        }
+
+        ul li {
+            padding-left: 5%;
+            width: 95%;
+        }
 
     }
 
