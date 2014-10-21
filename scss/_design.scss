@@ -1,6 +1,36 @@
+body {
+    margin: 0;
+}
+
+.screen-reader {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+
+
 .header {
 
     background-color: $nav-bar-bg-color;
+    width: 100%;
+    height:45px;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+
+    
+    a {
+        h1, h2 {
+            @extend .screen-reader;
+        }
+    }
 
     a.hgroup {
         width: pem(45);
@@ -39,10 +69,22 @@
 }
 
 .holder {
+
+    width: 70%;
+    max-width: pem(400);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    overflow: auto;
+
+
     background-color: $menu-bg-color;
     h2 {
         color: #fff;
         margin-left: pem(10);
+        height: 2vh;
+        max-height: 10px;
     }
     h4 {
         color: #fff;
@@ -63,66 +105,112 @@
     left: -500px;
     @include vendor("box-shadow", inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25));
 
+    nav {
+        overflow: auto;
+        height: 63vh;
+        
+        border-bottom: 1px solid rgba(0,0,0,0.4);
+        //border-top: 1px solid rgba(0,0,0,0.4);
 
+        &::-webkit-scrollbar {
+            width: 10px
+        }
+    }
 
-    ul li {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    section {
+        height: 35vh;
+        background-color: blue;
+    }
 
+    ul { 
+        
+        width: 100%;
+        list-style: none;
+        padding: 0;
 
-        a.selected i {
-            width: 0;
-            height: 0;
-            color: #fff;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent; 
-
-            border-right:10px solid #fff;
-            right: 0;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
+        a, label {
+            width: 88%;
+            padding: 1em 6%;
+            font-family: sans-serif;
+            text-decoration: none;
+            display: block;
+            color: rgb(204, 204, 204);
+            font-size: 0.875em;
+            line-height: 1.28571em;
+            font-weight: bold;
+            outline: medium none;
+            cursor: pointer;
+        }
+        label i {
+            float: right;
         }
 
+        // ul li {
+        //     padding-left: 5%;
+        //     width: 95%;
+        // }
 
-        a:hover, label:hover {
-            background-color: #444;
-        }
-
-        a.selected {
-            color: #fff;  
-        }
+        li {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
 
 
-        &:last-child {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+            a.selected i {
+                width: 0;
+                height: 0;
+                color: #fff;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent; 
 
-        input[type='checkbox'] {
-            display: none;
-            &:checked {
-                + ul {
-                    max-height: 500px;
+                border-right:10px solid #fff;
+                right: 0;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+            }
+
+
+            a:hover, label:hover {
+                background-color: #444;
+            }
+
+            a.selected {
+                color: #fff;  
+            }
+
+
+            &:last-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            input[type='checkbox'] {
+                display: none;
+                &:checked {
+                    + ul {
+                        max-height: 500px;
+                    }
                 }
             }
-        }
 
 
-        ul {
-            max-height: 0;
-            overflow: hidden;
+            ul {
+                max-height: 0;
+                overflow: hidden;
 
-            -webkit-transition: max-height 0.8s;
-            -moz-transition: max-height 0.8s;
-            transition: max-height 0.8s;
+                -webkit-transition: max-height 0.8s;
+                -moz-transition: max-height 0.8s;
+                transition: max-height 0.8s;
 
-            li {
-                &:last-child {
-                    border-bottom: none;
+                li {
+                    padding-left: 5%;
+                    width: 95%;
+                    &:last-child {
+                        border-bottom: none;
+                    }
                 }
             }
+
+
         }
-
-
     }
 
 }
@@ -136,6 +224,36 @@
     text-align: center;
 }
 
+
+#login-form {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dashed rgba(254,254,254,0.5);
+    
+    input {
+        width: 90%;
+        height: pem(32);
+        margin: pem(5) auto;
+        padding-left: pem(10);
+    }
+    
+    .btn {
+        margin: pem(5) auto pem(20);
+        background-color: rgba(40, 130, 250, 0.8);
+    }
+}
+
+#search-box {
+    width: 100%;
+    height: pem(32);
+    text-align: center;
+
+    input {
+        width: 90%;
+        height: pem(32);
+    }
+
+}
 
 @include breakpoint(extra-small) {
     .header {

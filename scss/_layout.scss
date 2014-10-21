@@ -31,71 +31,71 @@ body {
 }
 
 .holder {
-    width: 70%;
-    max-width: pem(400);
-    height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    overflow: auto;
+    // width: 70%;
+    // max-width: pem(400);
+    // height: 100%;
+    // position: fixed;
+    // top: 0;
+    // z-index: 5;
+    // overflow: auto;
 
     ul {
-        width: 100%;
-        list-style: none;
-        padding: 0;
+        // width: 100%;
+        // list-style: none;
+        // padding: 0;
 
-        a, label {
-            width: 88%;
-            padding: 1em 6%;
-            font-family: sans-serif;
-            text-decoration: none;
-            display: block;
-            color: rgb(204, 204, 204);
-            font-size: 0.875em;
-            line-height: 1.28571em;
-            font-weight: bold;
-            outline: medium none;
-            cursor: pointer;
-        }
-        label i {
-            float: right;
-        }
+        // a, label {
+        //     width: 88%;
+        //     padding: 1em 6%;
+        //     font-family: sans-serif;
+        //     text-decoration: none;
+        //     display: block;
+        //     color: rgb(204, 204, 204);
+        //     font-size: 0.875em;
+        //     line-height: 1.28571em;
+        //     font-weight: bold;
+        //     outline: medium none;
+        //     cursor: pointer;
+        // }
+        // label i {
+        //     float: right;
+        // }
 
-        ul li {
-            padding-left: 5%;
-            width: 95%;
-        }
+        // ul li {
+        //     padding-left: 5%;
+        //     width: 95%;
+        // }
 
     }
 
 }
 
-#login-form {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px dashed rgba(254,254,254,0.5);
-    
-    input {
-        width: 90%;
-        height: pem(32);
-        margin: pem(5) auto;
-        padding-left: pem(10);
-    }
-    
-    .btn {
-        margin: pem(5) auto pem(20);
-        background-color: rgba(40, 130, 250, 0.8);
-    }
-}
-
-#search-box {
-    width: 100%;
-    height: pem(32);
-    text-align: center;
-
-    input {
-        width: 90%;
-        height: pem(32);
-    }
-
-}
+// #login-form {
+//     width: 100%;
+//     text-align: center;
+//     border-bottom: 1px dashed rgba(254,254,254,0.5);
+//     
+//     input {
+//         width: 90%;
+//         height: pem(32);
+//         margin: pem(5) auto;
+//         padding-left: pem(10);
+//     }
+//     
+//     .btn {
+//         margin: pem(5) auto pem(20);
+//         background-color: rgba(40, 130, 250, 0.8);
+//     }
+// }
+// 
+// #search-box {
+//     width: 100%;
+//     height: pem(32);
+//     text-align: center;
+// 
+//     input {
+//         width: 90%;
+//         height: pem(32);
+//     }
+// 
+// }
