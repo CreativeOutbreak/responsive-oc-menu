@@ -107,7 +107,7 @@ body {
     
     .menu-wrap {
       min-height: 100%;
-      margin: 0 auto -252px; /* the bottom margin is the negative value of the footer's height */
+      margin: 0 auto -250px; /* the bottom margin is the negative value of the footer's height */
     }
     
     nav {
@@ -129,13 +129,33 @@ body {
     } 
 
     section {
-        //background-color: blue;
-        border-top: 2px solid rgba(0,0,0,0.2);
+        h3, p, .subslink {
+          float: right;
+          width: 200px;
+          color: #fff;
+          clear: both;
+        }
+        .subslink {
+          text-decoration: none;
+          background-color: #a03c3c;
+          padding: 10px 5px;
+          width: 120px;
+          margin-right: 70px;
+          text-align: center;
+          text-transform: uppercase;
+          @include vendor("box-shadow", pem(-1) pem(2) pem(2) rgba(0,0,0, 0.1), 0 pem(2) pem(10) rgba(0,0,0, 0.2));
+        }
         img {
+          transition: 0.2s;
           transform-origin: 50% 50%;
           transform: rotate(-10deg) translate(22px, 30px);
           @include vendor("box-shadow", pem(-2) pem(2) pem(2) rgba(0,0,0, 0.2), 0 pem(2) pem(10) rgba(0,0,0, 0.4));
-           
+          
+          &:hover {
+            transition: 0.2s;
+            transform: rotate(-10deg) translate(22px, 30px) scale(1.03);
+            @include vendor("box-shadow", pem(-3) pem(3) pem(3) rgba(0,0,0, 0.3), 0 pem(2) pem(12) rgba(0,0,0, 0.5));
+          } 
         }
     }
 
