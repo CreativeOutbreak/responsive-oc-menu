@@ -282,13 +282,36 @@ body {
 }
 
 #search-box {
-    width: 100%;
-    height: pem(32);
-    text-align: center;
+    width: 92%;
+    height: 2em;
+    position: relative;
+    margin: auto;
 
     input {
-        width: 90%;
-        height: pem(32);
+      width: 97%;
+      margin-right: 0px;
+      padding-right: 0px;
+      position: absolute;
+      height: 2.6em;
+      padding-left: 10px;
+      box-sizing: border-box;
+      padding-right: 55px;
+    }
+
+    i {
+      margin-left: 0px;
+      padding-left: 0px;
+      position: absolute;
+      z-index: 10;
+      width: 50px;
+      right: 12px;
+      display: block;
+      height: 1.65em;
+      padding-top: 0.55em;
+      text-align: center;
+      top: 1px;
+      border-left: 2px solid rgba(0, 0, 0, 0.1);
+      color: rgba(0,0,0,0.4);
     }
 
 }
